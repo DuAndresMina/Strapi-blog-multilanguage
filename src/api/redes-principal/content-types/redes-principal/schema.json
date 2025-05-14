@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "redes_principals",
+  "info": {
+    "singularName": "redes-principal",
+    "pluralName": "redes-principals",
+    "displayName": "RedesPrincipal"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "RedesSocial": {
+      "type": "component",
+      "repeatable": false,
+      "component": "componente.redes-sociales"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "meta_titulo_globals",
+  "info": {
+    "singularName": "meta-titulo-global",
+    "pluralName": "meta-titulo-globals",
+    "displayName": "MetaTituloGlobal"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "TituloPrincipal": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

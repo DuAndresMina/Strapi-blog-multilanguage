@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_componente_redes_sociales",
+  "info": {
+    "displayName": "RedesSociales",
+    "icon": "twitter",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Plataforma": {
+      "type": "enumeration",
+      "enum": [
+        "Twitter",
+        "Linkedin",
+        "Facebook",
+        "Instagram",
+        "YouTube",
+        "Website"
+      ]
+    },
+    "URL": {
+      "type": "string"
+    }
+  }
+}
