@@ -30,13 +30,18 @@ module.exports = ({ env }) => {
         database: env('DATABASE_NAME'),
         user: env('DATABASE_USERNAME'),
         password: env('DATABASE_PASSWORD'),
-        ssl: { 
-          require: false,
-          rejectUnauthorized: false,
-          ca: path.join(__dirname, 'ca.pem')
+        ssl: {
+          require: true, 
+          rejectUnauthorized: true,
+          ca: env('DATABASE_SSL_CA') 
         },
       },
-      pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
+      pool: {
+        min: env.int('DATABASE_POOL_MIN', 2),
+        max: env.int('DATABASE_POOL_MAX', 5), // Reduce el máximo para Render
+        acquireTimeoutMillis: 120000 // Aumenta timeout a 2 minutos
+      },
+      debug: false,
     },
     sqlite: {
       connection: {
