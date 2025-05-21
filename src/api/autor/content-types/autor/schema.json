@@ -4,7 +4,8 @@
   "info": {
     "singularName": "autor",
     "pluralName": "autors",
-    "displayName": "Autor"
+    "displayName": "Autor",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -22,16 +23,6 @@
           "localized": true
         }
       }
-    },
-    "Foto": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
     },
     "Biografia": {
       "type": "richtext",

@@ -376,6 +376,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiAutorAutor extends Struct.CollectionTypeSchema {
   collectionName: 'autors';
   info: {
+    description: '';
     displayName: 'Autor';
     pluralName: 'autors';
     singularName: 'autor';
@@ -402,7 +403,6 @@ export interface ApiAutorAutor extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Foto: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::autor.autor'>;
     Nombre: Schema.Attribute.String &
