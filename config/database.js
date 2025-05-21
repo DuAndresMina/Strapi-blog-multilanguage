@@ -1,4 +1,3 @@
-// config/database.js
 const path = require('path');
 
 module.exports = ({ env }) => {
@@ -7,26 +6,23 @@ module.exports = ({ env }) => {
   const connections = {
     postgres: {
       connection: {
-        // Usar solo connectionString, evita duplicar host/port
         connectionString: env('DATABASE_URL'),
+        host: env('DATABASE_HOST'),
+        port: env.int('DATABASE_PORT'),
+        database: env('DATABASE_NAME'),
+        user: env('DATABASE_USERNAME'),
+        password: env('DATABASE_PASSWORD'),
         ssl: {
-          require: true,
+          require: true, 
           rejectUnauthorized: true,
-          ca: env('DATABASE_SSL_CA')
-        }
+          ca: env('DATABASE_SSL_CA') 
+        },
       },
       pool: {
-        min: env.int('DATABASE_POOL_MIN', 1),
-        max: env.int('DATABASE_POOL_MAX', 5), // pool máximo reducido
+        min: env.int('DATABASE_POOL_MIN', 2),
+        max: env.int('DATABASE_POOL_MAX', 5), // Reduce el máximo para Render
       },
-      acquireConnectionTimeout: env.int('DB_ACQUIRE_TIMEOUT', 60000),
-      debug: env.bool('DATABASE_DEBUG', false),
-    },
-    sqlite: {
-      connection: {
-        filename: path.join(__dirname, '..', env('DATABASE_FILENAME', '.tmp/data.db')),
-      },
-      useNullAsDefault: true,
+      debug: false,
     },
   };
 
